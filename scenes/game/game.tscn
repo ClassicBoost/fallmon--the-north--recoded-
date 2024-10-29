@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://2q18fo6p1jm3"]
+
+[ext_resource type="Script" path="res://source/game/game.gd" id="1_7elxt"]
+[ext_resource type="PackedScene" uid="uid://dq5puylm0poa6" path="res://scenes/menus/sub/start_menu.tscn" id="2_32ic1"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_7elxt")
+
+[node name="start_menu" parent="." instance=ExtResource("2_32ic1")]
+visible = false

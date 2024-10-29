@@ -1,0 +1,162 @@
+[gd_scene load_steps=11 format=3 uid="uid://da166vplimth2"]
+
+[ext_resource type="FontFile" uid="uid://dyhi86j3ru5rs" path="res://assets/fonts/vcr.ttf" id="1_5i3fa"]
+[ext_resource type="Script" path="res://source/menus/title.gd" id="1_jehjm"]
+[ext_resource type="Texture2D" uid="uid://du8tqu58c188b" path="res://assets/graphics/title/bg.png" id="1_soywj"]
+[ext_resource type="PackedScene" uid="uid://dq5puylm0poa6" path="res://scenes/menus/sub/start_menu.tscn" id="4_447sp"]
+[ext_resource type="PackedScene" uid="uid://bufodnhbl7i07" path="res://scenes/backend/overlay.tscn" id="5_ngwtg"]
+[ext_resource type="PackedScene" uid="uid://dpxmx3o7s44ok" path="res://scenes/backend/volume.tscn" id="5_qw5et"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ja74l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c66wf"]
+bg_color = Color(1, 1, 1, 0.709804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nut2"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geqla"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="title" type="Node2D"]
+script = ExtResource("1_jehjm")
+
+[node name="bg" type="TextureRect" parent="."]
+offset_top = -192.0
+offset_right = 1281.0
+offset_bottom = 944.0
+texture = ExtResource("1_soywj")
+
+[node name="title_placeholder" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 570.0
+offset_bottom = 128.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("1_5i3fa")
+theme_override_font_sizes/font_size = 48
+text = "FALLMON: The North"
+
+[node name="subtitle" type="Label" parent="title_placeholder"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 48.0
+offset_right = 395.0
+offset_bottom = 80.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("1_5i3fa")
+theme_override_font_sizes/font_size = 24
+text = "Recoded version from Scratch"
+
+[node name="dumb" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 720.0
+
+[node name="start" type="Button" parent="dumb"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 320.0
+offset_right = 448.0
+offset_bottom = 384.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_5i3fa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_ja74l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c66wf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6nut2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_geqla")
+text = "START"
+alignment = 0
+
+[node name="settings" type="Button" parent="dumb"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 384.0
+offset_right = 448.0
+offset_bottom = 448.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_5i3fa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_ja74l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c66wf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6nut2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_geqla")
+text = "CONFIGURATION"
+alignment = 0
+
+[node name="awards" type="Button" parent="dumb"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 448.0
+offset_right = 448.0
+offset_bottom = 512.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_5i3fa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_ja74l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c66wf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6nut2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_geqla")
+text = "AWARDS"
+alignment = 0
+
+[node name="quit" type="Button" parent="dumb"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 512.0
+offset_right = 448.0
+offset_bottom = 576.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_5i3fa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_ja74l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c66wf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6nut2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_geqla")
+text = "QUIT"
+alignment = 0
+
+[node name="start_menu" parent="." instance=ExtResource("4_447sp")]
+visible = false
+
+[node name="white" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="overlayshit" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Overlay" parent="overlayshit" instance=ExtResource("5_ngwtg")]
+
+[node name="Volume" parent="overlayshit" instance=ExtResource("5_qw5et")]
+
+[connection signal="pressed" from="dumb/start" to="." method="option_pressed" binds= ["start"]]
+[connection signal="pressed" from="dumb/settings" to="." method="option_pressed" binds= ["settings"]]
+[connection signal="pressed" from="dumb/awards" to="." method="option_pressed" binds= ["awards"]]
+[connection signal="pressed" from="dumb/quit" to="." method="option_pressed" binds= ["quit"]]
